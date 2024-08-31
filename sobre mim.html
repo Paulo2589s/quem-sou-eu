@@ -7,16 +7,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    body {
+    /* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background-color: #6c1499;
+    background-color: #6d119c;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+    }
+
+/* Estilos para o cabeçalho */
+header {
+    background-color: #333;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+    
 }
+
 
 /* Container principal */
 .container {
@@ -25,6 +46,7 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 500px;
+    display: center;
     text-align: center;
 }
 
@@ -58,22 +80,52 @@ h2 {
 p {
     color: #555;
 }
+/* Media Query para dispositivos móveis */
+@media (max-width: 600px) {
+    .profile img {
+        width: 100px; /* Ajusta o tamanho da imagem para dispositivos móveis */
+    }
+
+    body {
+        padding: 10px; /* Reduz o padding em dispositivos móveis */
+    }
+}
 </style>
 <body>
     <div class="container">
         <h1>Bem-vindo ao Meu Site!</h1>
         <div class="perfil">
-            <img src="imagens/sua-foto.jpg" alt="Foto de Perfil">
+            <img src="https://img.freepik.com/fotos-premium/silhueta-de-um-cowboy-a-cavalo-atraves-de-um-vasto-horizonte-de-pastagens_1026215-283.jpg" alt="Foto de Perfil">
             <div class="descricao">
+
                 <h2>Quem sou eu?</h2>
                 <p>Meu nome é Paulo Roberto, tenho 18 anos e atualmente sou auxiliar de produção. Tenho o sonho de me formar em Análise e Desenvolvimento de Sistemas e seguir carreira como desenvolvedor front-end.</p>
                 <br/>
+
                 <h2>Onde nasci?</h2>
-                <p></p>
+                <p>Nasci aqui em Guarulhos mesmo no Hospital Geral,Muitos pensam que sou de uotrro pais como/;Mexico,Bolivia entre outros.mas sou um guarulhese raiz.</p>
+                <br/>
+
                 <h2>Por que começei a cursar ads</h2>
                 <p>Eu estava no meu ensino medio de boa,do nada meu professor maconheiro chegou e falou "gente vou ensinar progamarçao". e dai endiante so fui indo na onda ate pegar gosto pela parte frontand</p>
             </div>
         </div>
     </div>
+    <script>/// Função para ajustar a imagem com base na largura da tela
+        function ajustarImagem() {
+            const imagem = document.querySelector('.profile img');
+            if (window.innerWidth < 600) {
+                imagem.style.width = '80px'; // Reduz ainda mais para telas muito pequenas
+            } else {
+                imagem.style.width = '150px'; // Tamanho padrão para telas maiores
+            }
+        }
+        
+        // Chama a função ao carregar a página
+        window.onload = ajustarImagem;
+        
+        // Chama a função ao redimensionar a janela
+        window.onresize = ajustarImagem;
+        </script>
 </body>
 </html>
